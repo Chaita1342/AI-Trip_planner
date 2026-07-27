@@ -256,8 +256,7 @@ EXCHANGE_RATE_API_KEY=
 LANGCHAIN_API_KEY=
 ```
 
-> **Note:** These API keys are required for the application to access external services such as LLM inference, place search, weather forecasting, currency conversion, and travel recommendations. Never commit your `.env` file to GitHub.HAIN_API_KEY=
-
+> **Note:** These API keys are required for the application to access external services such as LLM inference, place search, weather forecasting, currency conversion, and travel recommendations.
 
 ---
 
