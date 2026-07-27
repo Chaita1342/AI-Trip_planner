@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<link
+    rel="stylesheet"
+    href="styles.css"
+>
+
+<title>AI Trip Planner</title>
+
+</head>
+
+<body>
+
+<div class="gallery-wrapper">
+
+    <!-- ==========================
+            HERO IMAGE
+    ========================== -->
+
+    <div class="hero-container">
+
+        <img
+            id="hero-image"
+            class="hero-image"
+            src="__IMAGE_1__"
+            alt="Travel Destination"
+        >
+
+        <div class="hero-overlay">
+
+            <h1 id="hero-title">
+                ✈ Discover Beautiful Places
+            </h1>
+
+            <p>
+                Plan Smarter. Travel Better.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+            THUMBNAILS
+    ========================== -->
+
+    <div
+        id="thumbnail-container"
+        class="thumbnail-container"
+    >
+
+        <img class="thumbnail active" src="__IMAGE_1__" data-index="0">
+
+        <img class="thumbnail" src="__IMAGE_2__" data-index="1">
+
+        <img class="thumbnail" src="__IMAGE_3__" data-index="2">
+
+        <img class="thumbnail" src="__IMAGE_4__" data-index="3">
+
+        <img class="thumbnail" src="__IMAGE_5__" data-index="4">
+
+        <img class="thumbnail" src="__IMAGE_6__" data-index="5">
+
+    </div>
+
+</div>
+
+<script>
+
+const images = [
+
+"__IMAGE_1__",
+
+"__IMAGE_2__",
+
+"__IMAGE_3__",
+
+"__IMAGE_4__",
+
+"__IMAGE_5__",
+
+"__IMAGE_6__"
+
+];
+
+let current = 0;
+
+let paused = false;
+
+let resumeTimer = null;
+
+const hero =
+document.getElementById("hero-image");
+
+const thumbs =
+document.querySelectorAll(".thumbnail");
+
+function showImage(index){
+
+    current = index;
+
+    hero.src = images[index];
+
+    thumbs.forEach(t=>t.classList.remove("active"));
+
+    thumbs[index].classList.add("active");
+
+}
+
+thumbs.forEach((thumb,index)=>{
+
+    thumb.addEventListener("click",()=>{
+
+        showImage(index);
+
+        paused = true;
+
+        clearTimeout(resumeTimer);
+
+        resumeTimer = setTimeout(()=>{
+
+            paused = false;
+
+        },7000);
+
+    });
+
+});
+
+setInterval(()=>{
+
+    if(paused) return;
+
+    current++;
+
+    if(current>=images.length){
+
+        current=0;
+
+    }
+
+    showImage(current);
+
+},5000);
+
+</script>
+
+</body>
+
+</html>
