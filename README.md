@@ -67,7 +67,7 @@ Planning a trip often requires switching between multiple websites to find attra
                                                       ▼
                                      ┌────────────────────────────────┐
                                      │        FastAPI Backend         │
-                                     │          (main.py)            │
+                                     │          (main.py)             │
                                      └────────────────┬───────────────┘
                                                       │
                                                       ▼
