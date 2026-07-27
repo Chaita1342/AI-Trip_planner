@@ -116,7 +116,6 @@ Planning a trip often requires switching between multiple websites to find attra
                                    Displayed in Streamlit UI
 ```
 
----
 
 # 📁 Project Structure
 
@@ -129,6 +128,15 @@ AI-Trip-Planner
 ├── config/
 │   └── config.yaml                  # Application configuration
 │
+├── frontend/
+│   ├── assets/
+│   │     travel1.jpg
+│   │     ...
+│   │     travel6.jpg
+│   │
+│   ├── gallery.html
+│   └── styles.css
+|
 ├── notebook/
 │   └── experiment.ipynb             # Development & experimentation
 │
@@ -170,7 +178,13 @@ AI-Trip-Planner
 - LangChain
 - LangGraph
 - Groq LLM
+  
+## 🖥️ Frontend
 
+- Streamlit
+- HTML5
+- CSS3
+- JavaScript (ES6)
 ## Backend
 
 - Python
@@ -208,12 +222,6 @@ Install dependencies
 
 ```bash
 pip install -r requirements.txt
-```
-
-or
-
-```bash
-uv pip install -r requirements.txt
 ```
 
 ---
